@@ -5,15 +5,22 @@ React Native 高德地图定位模块，支持 Android + iOS，提供尽可能�
 
 <img src="https://user-images.githubusercontent.com/1709072/57276743-12f67f00-70d5-11e9-9fe9-94e37abc1e0b.png" width=360>
 
+## 安装
+
+1. `npm install github:PizzaLiu/react-native-amap-geolocation --save`
+2. `npm link react-native-amap-geolocation`
+
+> pod: `pod 'react-native-amap-geolocation', :path => '../node_modules/react-native-amap-geolocation/lib/ios'`
+
 ## 用法
 
 ```javascript
 import { PermissionsAndroid } from "react-native";
-import { init, Geolocation } from "react-native-amap-geolocation";
+import Geolocation from "react-native-amap-geolocation";
 
 await PermissionsAndroid.request(PermissionsAndroid.PERMISSIONS.ACCESS_COARSE_LOCATION);
 
-await init({
+await Geolocation.init({
   ios: "9bd6c82e77583020a73ef1af59d0c759",
   android: "043b24fe18785f33c491705ffe5b6935"
 });
