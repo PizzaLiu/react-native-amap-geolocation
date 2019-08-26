@@ -16,6 +16,7 @@ RCT_REMAP_METHOD(init, initWithKey
                  : (NSString *)key
                  : (RCTPromiseResolveBlock)resolve
                  : (RCTPromiseRejectBlock)reject) {
+  [[AMapServices sharedServices] setEnableHTTPS:YES];
   [AMapServices sharedServices].apiKey = key;
   if (!_manager) {
     _manager = [AMapLocationManager new];
